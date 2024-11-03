@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:zikr/bloc/cubits/counter.dart';
 import 'package:zikr/gen/strings.g.dart';
-import 'package:zikr/pages/home.dart';
+// import 'package:zikr/widgets/pages/home.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:zikr/widgets/pages/settings.dart';
 
 final providers = [
   BlocProvider(create: (BuildContext context) => CounterCubit())
@@ -29,7 +30,7 @@ class App extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: seedColor),
             useMaterial3: true,
           ),
-          home: const HomePage(),
+          home: const SettingsPage(),
         ));
   }
 }

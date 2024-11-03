@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zikr/bloc/cubits/counter.dart';
-import 'package:zikr/parts/counter_text.dart';
-import 'package:zikr/parts/settings_button.dart';
+import 'package:zikr/widgets/parts/counter_text.dart';
+import 'package:zikr/widgets/parts/settings_button.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
