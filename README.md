@@ -18,14 +18,33 @@ You should have received a copy of the GNU Affero General Public License along w
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+1. **Clone Your Fork**  
+   - Go to your forked repository and find the green **Code** button.
+   - Copy the URL and open your terminal.
+   - Run this command:
+     ```bash
+     git clone https://github.com/YOUR-USERNAME/zikr.git
+     ```
+     _(Replace `YOUR-USERNAME` with your github username.)_
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. **Install Dependencies**  
+   - Navigate into the project folder:
+     ```bash
+     cd REPO-NAME
+     ```
+   - Install Flutter dependencies by running:
+     ```bash
+     flutter pub get
+     ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. **Run the App**  
+   - Connect a device or start an emulator, then run:
+     ```bash
+     flutter run
+     ```
+   - It should've work!
+
+---
 
 ### i18n
 
@@ -35,14 +54,18 @@ Currently, the we supports:
 - English (`en`)
 - Indonesia (`id`)
 
-## 🌟 Contributing to [Your App Name]
+---
+
+## 🌟 Contributing to zikr
 
 Thank you for your interest in contributing! This guide will walk you through the steps to get started, make changes, and submit them. If you get stuck, don’t worry — just ask questions in the discussions or issue comments.
 
+> Make sure your environment for developing flutter is prepared.
+> For help getting started with Flutter development, view the [online documentation](https://docs.flutter.dev/), which offers tutorials, samples, guidance on mobile development, and a full API reference.
 ### 1. Setting Up Locally (Getting Started)
 
 1. **Fork this Repository**  
-   - Look for the **Fork** button on the top right corner of this page. Click it!  
+   - Look for the **Fork** button on the top right corner of this page. **Click it!**  
    - This will create a personal copy of the project in your GitHub account.
 
 2. **Clone Your Fork**  
@@ -50,8 +73,9 @@ Thank you for your interest in contributing! This guide will walk you through th
    - Copy the URL and open your terminal.
    - Run this command:
      ```bash
-     git clone https://github.com/YOUR-USERNAME/REPO-NAME.git
+     git clone https://github.com/YOUR-USERNAME/zikr.git
      ```
+     _(Replace `YOUR-USERNAME` with your github username.)_
 
 3. **Install Dependencies**  
    - Navigate into the project folder:
@@ -108,6 +132,31 @@ Thank you for your interest in contributing! This guide will walk you through th
 
 ---
 
+### 4. i18n
+1. Create new translation based on `assets/i18n/zikr.i18n.yaml`
+  - Create new file in `assets/i18n/` folder with a name of `zikr_[new_translation_set].i18n.yaml` (eg: `zikr_fr.i18n.yaml`)
+2. Update `info.plist`
+  - Go to `ios/Runner/info.plist`.
+  - Find the part that looks similar like this:
+  ```
+  <key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>id</string>
+	</array>
+  ```
+  - Insert your new translation language in the **array section**
+  ```
+  <key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>id</string>
+    <string>fr</string>
+	</array>
+  ```
+3. run `dart run slang` to generate the necessary files.
+  - It will generate new files under `lib/gen`
+---
 ### 4. Testing
 1. Run Existing Tests
     - Check if your code broke anything:
@@ -116,7 +165,7 @@ Thank you for your interest in contributing! This guide will walk you through th
     ```
 2. Add Tests for New Features
     - If you added a new feature, write a test for it. (Need help? Ask in discussions or check the testing guide!)
-
+---
 ### 5. Submitting Your Work
 1. Push Your Branch
     - Send your branch to GitHub:
@@ -127,7 +176,7 @@ Thank you for your interest in contributing! This guide will walk you through th
     - Go to your fork on GitHub. You’ll see a Compare & pull request button. Click it.
     - Fill out the template, linking any relevant issues (e.g., “Fixes #123”).
     - Be clear about what your code does in the description.
-
+---
 ### 6. Review Process
 1. Wait for Feedback
     - We’ll review your code and may request changes. This is normal! Just make the changes and push to the same branch.
