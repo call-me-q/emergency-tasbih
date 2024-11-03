@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:zikr/bloc/cubits/counter.dart';
+import 'package:zikr/gen/strings.g.dart';
 import 'package:zikr/pages/home.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,8 +20,12 @@ class App extends StatelessWidget {
     return MultiBlocProvider(
         providers: providers,
         child: MaterialApp(
+          locale: TranslationProvider.of(context).flutterLocale, // use provider
+          supportedLocales: AppLocaleUtils.supportedLocales,
+          localizationsDelegates: GlobalMaterialLocalizations.delegates,
           title: 'Zikr',
           theme: ThemeData(
+            scaffoldBackgroundColor: Colors.black,
             colorScheme: ColorScheme.fromSeed(seedColor: seedColor),
             useMaterial3: true,
           ),

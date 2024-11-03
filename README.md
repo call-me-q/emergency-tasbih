@@ -26,3 +26,114 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+### i18n
+
+This project is using [`slang` for easier internasionalization](https://pub.dev/packages/slang).
+
+Currently, the we supports:
+- English (`en`)
+- Indonesia (`id`)
+
+## 🌟 Contributing to [Your App Name]
+
+Thank you for your interest in contributing! This guide will walk you through the steps to get started, make changes, and submit them. If you get stuck, don’t worry — just ask questions in the discussions or issue comments.
+
+### 1. Setting Up Locally (Getting Started)
+
+1. **Fork this Repository**  
+   - Look for the **Fork** button on the top right corner of this page. Click it!  
+   - This will create a personal copy of the project in your GitHub account.
+
+2. **Clone Your Fork**  
+   - Go to your forked repository and find the green **Code** button.
+   - Copy the URL and open your terminal.
+   - Run this command:
+     ```bash
+     git clone https://github.com/YOUR-USERNAME/REPO-NAME.git
+     ```
+
+3. **Install Dependencies**  
+   - Navigate into the project folder:
+     ```bash
+     cd REPO-NAME
+     ```
+   - Install Flutter dependencies by running:
+     ```bash
+     flutter pub get
+     ```
+
+4. **Run the App**  
+   - Connect a device or start an emulator, then run:
+     ```bash
+     flutter run
+     ```
+   - If it works, you’re ready to start contributing!
+
+---
+
+### 2. Working on an Issue
+
+1. **Find an Issue**  
+   - Check out the **Issues** tab to see what needs work.
+   - Choose one and comment, “I’d like to work on this,” so others know you’re on it.
+
+2. **Create a Branch**  
+   - **Never work on the `main` branch directly!**  
+   - Create a new branch with a clear name, like this:
+     ```bash
+     git checkout -b fix/issue-123
+     ```
+     _(Replace `123` with the issue number.)_
+
+3. **Make Your Changes**  
+   - Write code, save files, and check that everything looks good.
+
+4. **Commit Your Changes**  
+   - Add and commit your changes with a helpful message:
+     ```bash
+     git add .
+     git commit -m "Fixed issue #123: Describe what you did here"
+     ```
+
+---
+
+### 3. Code Style and Formatting
+
+- Follow the Dart style guide. If you’re not sure, just run:
+    ```bash
+    flutter format .
+    ```
+- Make sure no warnings or errors pop up!
+
+---
+
+### 4. Testing
+1. Run Existing Tests
+    - Check if your code broke anything:
+    ```bash
+    flutter test
+    ```
+2. Add Tests for New Features
+    - If you added a new feature, write a test for it. (Need help? Ask in discussions or check the testing guide!)
+
+### 5. Submitting Your Work
+1. Push Your Branch
+    - Send your branch to GitHub:
+    ```bash
+        git push origin fix/issue-123
+    ```
+2. Create a Pull Request (PR)
+    - Go to your fork on GitHub. You’ll see a Compare & pull request button. Click it.
+    - Fill out the template, linking any relevant issues (e.g., “Fixes #123”).
+    - Be clear about what your code does in the description.
+
+### 6. Review Process
+1. Wait for Feedback
+    - We’ll review your code and may request changes. This is normal! Just make the changes and push to the same branch.
+2. Merge
+    - Once approved, your code will be merged, and you’ll have contributed to [Your App Name]! 🎉
+
+## 🔥 Need Help?
+
+Got questions? Open a discussion, comment on the issue, or ask in our [Community Channel/Slack/Discord].
