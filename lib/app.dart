@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:go_router/go_router.dart';
 import 'package:zikr/bloc/cubits/counter.dart';
 import 'package:zikr/gen/strings.g.dart';
-// import 'package:zikr/widgets/pages/home.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:zikr/widgets/pages/settings.dart';
+import 'package:zikr/routes.dart';
 
 final providers = [
   BlocProvider(create: (BuildContext context) => CounterCubit())
@@ -20,7 +20,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
         providers: providers,
-        child: MaterialApp(
+        child: MaterialApp.router(
           locale: TranslationProvider.of(context).flutterLocale, // use provider
           supportedLocales: AppLocaleUtils.supportedLocales,
           localizationsDelegates: GlobalMaterialLocalizations.delegates,
@@ -30,7 +30,7 @@ class App extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: seedColor),
             useMaterial3: true,
           ),
-          home: const SettingsPage(),
+          routerConfig: GoRouter(routes: routes, initialLocation: '/'),
         ));
   }
 }

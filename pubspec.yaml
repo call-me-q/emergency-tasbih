@@ -39,6 +39,7 @@ dependencies:
   flutter_bloc: ^8.1.6
   slang: ^4.1.0
   slang_flutter: ^4.1.0
+  go_router: ^14.3.0
 
 dev_dependencies:
   flutter_test:
