@@ -134,28 +134,29 @@ Thank you for your interest in contributing! This guide will walk you through th
 
 ### 4. i18n
 1. Create new translation based on `assets/i18n/zikr.i18n.yaml`
-  - Create new file in `assets/i18n/` folder with a name of `zikr_[new_translation_set].i18n.yaml` (eg: `zikr_fr.i18n.yaml`)
+    - Create new file in `assets/i18n/` folder with a name of `zikr_[new_translation_set].i18n.yaml` (eg: `zikr_fr.i18n.yaml`)
 2. Update `info.plist`
-  - Go to `ios/Runner/info.plist`.
-  - Find the part that looks similar like this:
-  ```
-  <key>CFBundleLocalizations</key>
-	<array>
-		<string>en</string>
-		<string>id</string>
-	</array>
-  ```
-  - Insert your new translation language in the **array section**
-  ```
-  <key>CFBundleLocalizations</key>
-	<array>
-		<string>en</string>
-		<string>id</string>
-    <string>fr</string>
-	</array>
-  ```
+    - Go to `ios/Runner/info.plist`.
+    - Find the part that looks similar like this:
+    ```
+    <key>CFBundleLocalizations</key>
+    <array>
+      <string>en</string>
+      <string>id</string>
+    </array>
+    ```
+    - Insert your new translation language in the **array section**
+    ```
+    <key>CFBundleLocalizations</key>
+    <array>
+      <string>en</string>
+      <string>id</string>
+      <string>fr</string>
+    </array>
+    ```
 3. run `dart run slang` to generate the necessary files.
-  - It will generate new files under `lib/gen`
+    - It will generate new files under `lib/gen`
+
 ---
 ### 4. Testing
 1. Run Existing Tests
@@ -185,4 +186,4 @@ Thank you for your interest in contributing! This guide will walk you through th
 
 ## 🔥 Need Help?
 
-Got questions? Open a discussion, comment on the issue, or ask in our [Community Channel/Slack/Discord].
+Got questions? Open a [discussion](https://github.com/call-me-q/zikr/discussions) or comment on the [issue](https://github.com/call-me-q/zikr/issues).
