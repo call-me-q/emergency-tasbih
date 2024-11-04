@@ -6,14 +6,14 @@ class CounterCubit extends Cubit<int> {
 
   Future<void> increment() async {
     if (await Vibration.hasVibrator() == true) {
-      Vibration.vibrate(duration: 300);
+      Vibration.vibrate(duration: 90);
     }
     emit(state + 1);
   }
 
   Future<void> reset() async {
     if (await Vibration.hasVibrator() == true) {
-      Vibration.vibrate(duration: 600);
+      Vibration.vibrate(duration: 500);
     }
     emit(0);
   }

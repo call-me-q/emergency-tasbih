@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:zikr/bloc/cubits/counter.dart';
+part of 'dzikr_area.dart';
 
 class CounterTextWidget extends StatelessWidget {
   const CounterTextWidget({super.key});

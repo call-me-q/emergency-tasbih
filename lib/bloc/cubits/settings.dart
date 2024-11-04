@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:zikr/models/settings.dart';
+import 'package:zikr/models/index.dart';
 
 class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   final SharedPreferences _sharedPreferences;
