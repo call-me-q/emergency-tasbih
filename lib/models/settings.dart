@@ -1,32 +1,70 @@
-class Settings {
-  bool useSound;
-  bool useVibrate;
-  int limit;
+import 'package:equatable/equatable.dart';
 
-  Settings({
-    this.useSound = true,
-    this.useVibrate = false,
-    this.limit = 33,
-  }) {
-    _enforceAtLeastOneEnabled();
-  }
+abstract class SettingsEvent extends Equatable {
+  const SettingsEvent();
 
-  // Enforce that at least one of `useSound` or `useVibrate` is always true
-  void _enforceAtLeastOneEnabled() {
-    if (!useSound && !useVibrate) {
-      useSound = true; // Default to sound if both are off
-    }
-  }
+  @override
+  List<Object> get props => [];
+}
 
-  // Toggle sound and check rule
-  void toggleSound() {
-    useSound = !useSound;
-    _enforceAtLeastOneEnabled();
-  }
+class UpdateSettingsEvent extends SettingsEvent {
+  final bool useSound;
+  final bool useVibrate;
+  final bool leftToRight;
+  final int limit;
 
-  // Toggle vibrate and check rule
-  void toggleVibrate() {
-    useVibrate = !useVibrate;
-    _enforceAtLeastOneEnabled();
-  }
+  const UpdateSettingsEvent({
+    required this.useSound,
+    required this.useVibrate,
+    required this.leftToRight,
+    required this.limit,
+  });
+
+  @override
+  List<Object> get props => [useSound, useVibrate, leftToRight, limit];
+}
+
+class LoadSettingsEvent extends SettingsEvent {}
+
+abstract class SettingsState extends Equatable {
+  const SettingsState();
+
+  @override
+  List<Object> get props => [];
+}
+
+class SettingsInitial extends SettingsState {}
+
+class SettingsLoaded extends SettingsState {
+  final bool useSound;
+  final bool useVibrate;
+  final bool leftToRight;
+  final int limit;
+
+  const SettingsLoaded({
+    required this.useSound,
+    required this.useVibrate,
+    required this.leftToRight,
+    required this.limit,
+  });
+
+  @override
+  List<Object> get props => [useSound, useVibrate, leftToRight, limit];
+}
+
+class SettingsUpdated extends SettingsState {
+  final bool useSound;
+  final bool useVibrate;
+  final bool leftToRight;
+  final int limit;
+
+  const SettingsUpdated({
+    required this.useSound,
+    required this.useVibrate,
+    required this.leftToRight,
+    required this.limit,
+  });
+
+  @override
+  List<Object> get props => [useSound, useVibrate, limit];
 }
