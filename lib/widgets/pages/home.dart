@@ -14,15 +14,12 @@ class HomePage extends StatelessWidget {
         child: GestureDetector(
           onLongPress: () {
             context.read<CounterCubit>().reset();
-            print('reset');
           },
           onTap: () {
             context.read<CounterCubit>().increment();
-            print('tapped');
           },
           onPanEnd: (details) {
             context.read<CounterCubit>().increment();
-            print('swiped');
           },
           child: Container(
               width: double.infinity,
