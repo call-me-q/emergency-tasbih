@@ -1,12 +1,23 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:zikr/states/setting_state.dart';
 
-class CounterCubit extends Cubit<int> {
-  /// {@macro counter_cubit}
-  CounterCubit() : super(0);
+class SettingsCubit extends HydratedCubit<SettingsState> {
+  SettingsCubit() : super(const SettingsState());
 
-  /// Add 1 to the current state.
-  void increment() => emit(state + 1);
+  void toggleSound() => emit(state.copyWith(useSound: !state.useSound));
 
-  /// Subtract 1 from the current state.
-  void decrement() => emit(state - 1);
+  void toggleVibration() =>
+      emit(state.copyWith(useVibration: !state.useVibration));
+
+  void toggleDirection() =>
+      emit(state.copyWith(leftToRight: !state.leftToRight));
+
+  void updateLimit(int limit) => emit(state.copyWith(limit: limit));
+
+  @override
+  SettingsState fromJson(Map<String, dynamic> json) =>
+      SettingsState.fromJson(json);
+
+  @override
+  Map<String, dynamic> toJson(SettingsState state) => state.toJson();
 }

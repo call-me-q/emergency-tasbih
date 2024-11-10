@@ -1,42 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:zikr/bloc/cubits/counter.dart';
-import 'package:zikr/widgets/parts/counter_text.dart';
-import 'package:zikr/widgets/parts/settings_button.dart';
+import 'package:zikr/widgets/parts/dzikr_area/dzikr_area.dart';
+import 'package:zikr/widgets/parts/setting_sheet/setting_sheet.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
-        child: GestureDetector(
-          onLongPress: () {
-            context.read<CounterCubit>().reset();
-            print('reset');
-          },
-          onTap: () {
-            context.read<CounterCubit>().increment();
-            print('tapped');
-          },
-          onPanEnd: (details) {
-            context.read<CounterCubit>().increment();
-            print('swiped');
-          },
-          child: Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: Colors.transparent,
-              child: const Column(
-                children: [
-                  Expanded(
-                      child: Center(
-                    child: CounterTextWidget(),
-                  )),
-                  SettingsButton()
-                ],
-              )),
+        child: Stack(
+          children: [DzikrArea(), SettingSheet()],
         ),
       ),
     );
