@@ -44,6 +44,11 @@ dependencies:
   shared_preferences: ^2.3.2
   equatable: ^2.0.5
   just_audio: ^0.9.42
+  hydrated_bloc: ^9.1.5
+  json_annotation: ^4.9.0
+  condora_automatic_getter_storage_directory: ^1.0.1
+  flutter_hooks: ^0.20.5
+  flutter_launcher_icons: ^0.14.1
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +60,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
+  build_runner: ^2.4.13
+  json_serializable: ^6.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -93,6 +100,8 @@ flutter:
           weight: 600
         - asset: assets/fonts/NotoSansArabic-ExtraBold.ttf
           weight: 700
+  assets:
+    - shorebird.yaml
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zikr/bloc/cubits/counter.dart';
+import 'package:zikr/bloc/cubits/settings.dart';
 import 'package:zikr/gen/strings.g.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zikr/routes.dart';
 
 final providers = [
-  BlocProvider(create: (BuildContext context) => CounterCubit())
+  BlocProvider<CounterCubit>(
+    create: (BuildContext context) => CounterCubit(), // <-- Wrap in a function
+  ),
+  BlocProvider<SettingsCubit>(
+      create: (BuildContext context) => SettingsCubit()),
 ];
-
 const seedColor = Color.fromARGB(255, 33, 32, 34);
 
 class App extends StatelessWidget {

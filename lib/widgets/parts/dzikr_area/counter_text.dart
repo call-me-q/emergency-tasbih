@@ -8,7 +8,8 @@ class CounterTextWidget extends StatelessWidget {
     return BlocBuilder<CounterCubit, int>(
       builder: (context, state) => Text(
         state.toString(),
-        style: const TextStyle(fontSize: 96, color: Colors.white),
+        style: const TextStyle(
+            fontSize: 96, color: Colors.white, fontWeight: FontWeight.w500),
       ),
     );
   }
