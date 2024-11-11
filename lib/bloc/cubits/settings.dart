@@ -11,7 +11,7 @@ class SettingsCubit extends HydratedCubit<SettingsState> {
 
   void toggleLTR() => emit(state.copyWith(leftToRight: !state.leftToRight));
 
-  void updateLimit(int checkpoint) =>
+  void updateCheckpoint(int checkpoint) =>
       emit(state.copyWith(checkpoint: checkpoint));
 
   @override

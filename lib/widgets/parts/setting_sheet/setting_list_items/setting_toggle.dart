@@ -3,7 +3,13 @@ part of '../setting_sheet.dart';
 class SettingToggle extends StatelessWidget {
   final String text;
   final Function(bool value) onToggle;
-  const SettingToggle({super.key, required this.text, required this.onToggle});
+  final Function(SettingsState value) settingState;
+
+  const SettingToggle(
+      {super.key,
+      required this.text,
+      required this.onToggle,
+      required this.settingState});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +17,7 @@ class SettingToggle extends StatelessWidget {
         builder: (BuildContext context, SettingsState state) {
       return SwitchListTile(
         title: SettingText(text: text),
-        value: state.leftToRight,
+        value: settingState(state),
         onChanged: (bool value) {
           onToggle(value);
         },

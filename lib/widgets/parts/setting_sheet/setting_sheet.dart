@@ -9,7 +9,7 @@ part './app_bar.dart';
 part './setting_list.dart';
 part './setting_list_items/setting_text.dart';
 part './setting_list_items/setting_toggle.dart';
-part './setting_list_items/setting_input.dart';
+part 'setting_list_items/setting_input_field.dart';
 
 class SettingSheet extends HookWidget {
   const SettingSheet({super.key});
