@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:zikr/bloc/cubits/settings.dart';
+import 'package:zikr/model/settings_state.dart';
 
 part './drag_box.dart';
 part './app_bar.dart';
 part './setting_list.dart';
+part './setting_list_items/setting_text.dart';
+part './setting_list_items/setting_toggle.dart';
+part './setting_list_items/setting_input.dart';
 
 class SettingSheet extends HookWidget {
   const SettingSheet({super.key});
