@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zikr/bloc/cubits/settings.dart';
@@ -48,7 +49,7 @@ class SettingSheet extends HookWidget {
                   border: BorderDirectional(
                       top: BorderSide(
                           width: 1,
-                          color: value ? Colors.white24 : Colors.white70)),
+                          color: value ? Colors.white70 : Colors.white24)),
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(25),
                     topRight: Radius.circular(25),
