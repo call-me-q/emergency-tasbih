@@ -1,5 +1,6 @@
 name: zikr
 description: "An Electronic Dzikr App"
+homepage: "https://tamat.software"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -49,6 +50,7 @@ dependencies:
   condora_automatic_getter_storage_directory: ^1.0.1
   flutter_hooks: ^0.20.5
   flutter_launcher_icons: ^0.14.1
+  url_launcher: ^6.3.1
 
 dev_dependencies:
   flutter_test:
@@ -102,6 +104,8 @@ flutter:
           weight: 700
   assets:
     - shorebird.yaml
+    - assets/images/tamat-soft-logo.png
+    - assets/audio/switch.mp3
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

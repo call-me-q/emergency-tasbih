@@ -1,40 +1,49 @@
 part of 'setting_sheet.dart';
 
-class SettingText extends StatelessWidget {
-  const SettingText({super.key, required this.text});
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: const TextStyle(
-          color: Colors.white, fontSize: 18, fontWeight: FontWeight.w500),
-    );
-  }
-}
-
 class SettingList extends StatelessWidget {
   const SettingList({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SliverList.list(children: [
-      SwitchListTile(
-        title: const SettingText(text: 'Use Sound'),
-        value: false,
-        onChanged: (bool value) {},
+      SettingToggle(
+        text: 'Use Sound',
+        settingState: (SettingsState state) => state.useSound,
+        onToggle: (bool value) {
+          context.read<SettingsCubit>().toggleSound();
+        },
       ),
-      SwitchListTile(
-        title: const SettingText(text: 'Use Vibration'),
-        value: true,
-        onChanged: (bool value) {},
+      SettingToggle(
+        text: 'Use Vibration',
+        settingState: (SettingsState state) => state.useVibration,
+        onToggle: (bool value) {
+          context.read<SettingsCubit>().toggleVibration();
+        },
       ),
-      SwitchListTile(
-        title: const SettingText(text: 'Use Left to Right Format'),
-        value: false,
-        onChanged: (bool value) {},
+      // SettingToggle(
+      //   text: 'Use Left To Right Format',
+      //   settingState: (SettingsState state) => state.leftToRight,
+      //   onToggle: (bool value) {
+      //     context.read<SettingsCubit>().toggleLTR();
+      //   },
+      // ),
+      const Divider(
+        thickness: 0.5,
+        color: Colors.white54,
       ),
+      SettingInputField(
+          text: 'Set Checkpoint',
+          keyboardType: const TextInputType.numberWithOptions(
+            decimal: true, // Allow decimal numbers
+          ),
+          settingState: (SettingsState state) => state.checkpoint.toString(),
+          onChanged: (String value) {
+            if (value.isEmpty || !value.contains(RegExp(r'[0-9]'))) {
+              return;
+            }
+            int parsedValue = int.parse(value);
+            context.read<SettingsCubit>().updateCheckpoint(parsedValue);
+          })
     ]);
   }
 }

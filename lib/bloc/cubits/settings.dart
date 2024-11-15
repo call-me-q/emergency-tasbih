@@ -1,5 +1,5 @@
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:zikr/states/setting_state.dart';
+import 'package:zikr/model/settings_state.dart';
 
 class SettingsCubit extends HydratedCubit<SettingsState> {
   SettingsCubit() : super(const SettingsState());
@@ -9,10 +9,10 @@ class SettingsCubit extends HydratedCubit<SettingsState> {
   void toggleVibration() =>
       emit(state.copyWith(useVibration: !state.useVibration));
 
-  void toggleDirection() =>
-      emit(state.copyWith(leftToRight: !state.leftToRight));
+  void toggleLTR() => emit(state.copyWith(leftToRight: !state.leftToRight));
 
-  void updateLimit(int limit) => emit(state.copyWith(limit: limit));
+  void updateCheckpoint(int checkpoint) =>
+      emit(state.copyWith(checkpoint: checkpoint));
 
   @override
   SettingsState fromJson(Map<String, dynamic> json) =>

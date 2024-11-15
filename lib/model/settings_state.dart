@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:equatable/equatable.dart';
 
-part 'setting_state.g.dart';
+part 'settings_state.g.dart';
 
 @JsonSerializable()
 class SettingsState extends Equatable {
@@ -9,7 +9,7 @@ class SettingsState extends Equatable {
     this.useSound = true,
     this.useVibration = true,
     this.leftToRight = true,
-    this.limit = 33,
+    this.checkpoint = 33,
   });
 
   factory SettingsState.fromJson(Map<String, dynamic> json) =>
@@ -18,24 +18,24 @@ class SettingsState extends Equatable {
   final bool useSound;
   final bool useVibration;
   final bool leftToRight;
-  final int limit;
+  final int checkpoint;
 
   SettingsState copyWith({
     bool? useSound,
     bool? useVibration,
     bool? leftToRight,
-    int? limit,
+    int? checkpoint,
   }) {
     return SettingsState(
       useSound: useSound ?? this.useSound,
       useVibration: useVibration ?? this.useVibration,
       leftToRight: leftToRight ?? this.leftToRight,
-      limit: limit ?? this.limit,
+      checkpoint: checkpoint ?? this.checkpoint,
     );
   }
 
   Map<String, dynamic> toJson() => _$SettingsStateToJson(this);
 
   @override
-  List<Object?> get props => [useSound, useVibration, leftToRight, limit];
+  List<Object?> get props => [useSound, useVibration, leftToRight, checkpoint];
 }

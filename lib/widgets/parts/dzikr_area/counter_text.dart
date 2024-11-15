@@ -5,11 +5,12 @@ class CounterTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CounterCubit, int>(
-      builder: (context, state) => Text(
+    return BlocConsumer<CounterCubit, int>(
+      listener: (BuildContext context, int state) {},
+      builder: (BuildContext context, int state) => Text(
         state.toString(),
         style: const TextStyle(
-            fontSize: 96, color: Colors.white, fontWeight: FontWeight.w500),
+            fontSize: 120, color: Colors.white, fontWeight: FontWeight.w500),
       ),
     );
   }
