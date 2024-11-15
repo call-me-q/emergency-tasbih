@@ -1,4 +1,4 @@
-# zikr
+# Emergency Tasbih
 
 > Electronic Dzikr App. (C) 2024 M Tsani Qudsi
 
