@@ -1,19 +1,14 @@
-import 'package:condora_automatic_getter_storage_directory/condora_automatic_getter_storage_directory.dart';
+import 'package:emergency_tasbih/widgets/app/app.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:zikr/app.dart';
-import 'package:zikr/gen/strings.g.dart';
+import 'package:path_provider/path_provider.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized(); // add this
-  LocaleSettings.useDeviceLocale();
+  WidgetsFlutterBinding.ensureInitialized();
   HydratedBloc.storage = await HydratedStorage.build(
-    storageDirectory: await condoraAutomaticGetterStorageDirectory(
-      webStorageDirectory: HydratedStorage.webStorageDirectory,
-    ),
-  );
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-  ]).then((value) => runApp(TranslationProvider(child: const App())));
+      storageDirectory: kIsWeb
+          ? HydratedStorage.webStorageDirectory
+          : await getApplicationDocumentsDirectory());
+  runApp(const App());
 }
