@@ -1,7 +1,7 @@
-import 'package:emergency_tasbih/models/config_model.dart';
+import 'package:emergency_tasbih/models/models.dart';
 import 'package:flutter/widgets.dart';
 
-final ConfigModel config = ConfigModel(
+final ConfigData config = ConfigData(
   appName: 'Emergency Tasbih',
   useNotification: true,
   useRTLFormat: false,

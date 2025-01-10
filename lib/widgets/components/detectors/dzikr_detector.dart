@@ -6,9 +6,11 @@ class DzikrDetector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => {},
-      behavior: HitTestBehavior.opaque,
-      child: BlocBuilder(builder: builder),
-    );
+        onTap: () => {},
+        behavior: HitTestBehavior.opaque,
+        child: Expanded(
+            child: Column(
+          children: [],
+        )));
   }
 }

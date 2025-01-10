@@ -19,6 +19,8 @@ dependencies:
   hydrated_bloc: ^9.1.5
   go_router_builder: ^2.7.1
   path_provider: ^2.1.5
+  equatable: ^2.0.7
+  json_annotation: ^4.9.0
 
 dev_dependencies:
   flutter_test:
@@ -26,6 +28,7 @@ dev_dependencies:
 
   flutter_lints: ^5.0.0
   build_runner: ^2.4.14
+  json_serializable: ^6.9.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

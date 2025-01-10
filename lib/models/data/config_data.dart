@@ -1,6 +1,6 @@
-import 'package:flutter/widgets.dart';
+part of '../models.dart';
 
-class ConfigModel {
+class ConfigData {
   // App configuration
   final String appName;
   final bool useSound;
@@ -17,7 +17,7 @@ class ConfigModel {
   final Color textSecondaryColor;
   final Color textTeritaryColor;
 
-  ConfigModel(
+  ConfigData(
       {required this.appName,
       required this.useNotification,
       required this.useRTLFormat,
